@@ -43,7 +43,7 @@ export default function SignInPage() {
         </CardContent>
         <CardFooter className="flex flex-col items-center space-y-2">
           <p className="text-sm text-muted-foreground">
-            Don't have an account?
+            Don&apos;t have an account?
           </p>
           <Link href="/sign-up">Sign up</Link>
         </CardFooter>
