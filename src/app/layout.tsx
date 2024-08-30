@@ -26,9 +26,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn("bg-background font-sans antialiased", inter.className)}
-      >
+      <body className={cn("bg-background antialiased", inter.className)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
