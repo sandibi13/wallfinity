@@ -9,42 +9,38 @@ import {
   CardContent,
   CardFooter,
 } from "./ui/card";
-import { cn } from "~/lib/utils";
-import { buttonVariants } from "./ui/button";
+import { Button } from "./ui/button";
 import { signIn } from "next-auth/react";
-import { Icons } from "./ui/icons";
+import { Icons } from "./icons";
 
 export const AuthForm = () => {
   return (
-    <Card className="mx-auto w-full max-w-[380px] space-y-4">
+    <Card className="mx-auto w-full max-w-[380px] space-y-6">
       <CardHeader className="space-y-1 text-center">
         <CardTitle className="text-2xl font-bold">Welcome</CardTitle>
         <CardDescription className="text-sm">
           Sign in to your account
         </CardDescription>
       </CardHeader>
-      <CardContent className="flex flex-col gap-4">
-        <button
-          className={cn(buttonVariants({ variant: "outline" }), "w-full")}
+      <CardContent className="flex flex-col gap-5">
+        <Button
+          variant="outline"
+          className="w-full"
           onClick={() => signIn("discord")}
         >
           <Icons.Discord className="mr-2 h-4 w-4" />
           Sign in with Discord
-        </button>
+        </Button>
 
-        <button
-          className={cn(buttonVariants({ variant: "outline" }), "w-full")}
-        >
+        <Button variant="outline" className="w-full">
           <Icons.Google className="mr-2 h-4 w-4" />
           Sign in with Google
-        </button>
+        </Button>
 
-        <button
-          className={cn(buttonVariants({ variant: "outline" }), "w-full")}
-        >
+        <Button variant="outline" className="w-full">
           <Icons.Github className="mr-2 h-4 w-4" />
           Sign in with Github
-        </button>
+        </Button>
       </CardContent>
       <CardFooter>
         <p className="mt-4 px-2 text-center text-xs text-muted-foreground sm:px-4 sm:text-sm">

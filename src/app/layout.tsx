@@ -26,14 +26,19 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("bg-background antialiased", inter.className)}>
+      <body
+        className={cn(
+          "min-h-screen bg-background antialiased",
+          inter.className,
+        )}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-screen flex-col">{children}</div>
+          {children}
         </ThemeProvider>
       </body>
     </html>

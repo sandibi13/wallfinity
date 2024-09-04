@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function ExplorePage() {
+export default function UserIDPage() {
   return (
     <div>
-      <h1>ExplorePage</h1>
+      <h1>UserIDPage</h1>
     </div>
   );
 }
