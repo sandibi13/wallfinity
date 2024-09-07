@@ -14,6 +14,26 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
+model Wallpaper {
+    id          String   @id @default(cuid())
+    name        String
+    description String?
+    url         String
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt
+
+    createdBy   User   @relation(fields: [createdById], references: [id])
+    createdById String
+
+    likes     Int @default(0)
+    downloads Int @default(0)
+    bookmarks Int @default(0)
+
+    tags String[]
+
+    @@index([name, tags])
+}
+
 // Necessary for Next auth
 model Account {
     id                       String  @id @default(cuid())
@@ -45,11 +65,20 @@ model Session {
 model User {
     id            String    @id @default(cuid())
     name          String?
-    email         String?   @unique
+    email         String    @unique
     emailVerified DateTime?
     image         String?
-    accounts      Account[]
-    sessions      Session[]
+    bio           String?
+    uploads       Int       @default(0)
+    followers     Int       @default(0)
+    likes         Int       @default(0)
+
+    accounts   Account[]
+    sessions   Session[]
+    wallpapers Wallpaper[]
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }
 
 model VerificationToken {
