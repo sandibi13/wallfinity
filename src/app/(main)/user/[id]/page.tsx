@@ -100,7 +100,7 @@ export default async function UserIDPage({ params }: UserIDPageProps) {
             </TabsContent>
             <TabsContent value="collections">
               <p className="text-muted-foreground">
-                User's collections will appear here.
+                User&apos;s collections will appear here.
               </p>
             </TabsContent>
           </Tabs>
