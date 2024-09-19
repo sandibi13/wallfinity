@@ -13,13 +13,13 @@ import { Button } from "./ui/button";
 import { signIn } from "next-auth/react";
 import { Icons } from "./icons";
 
-export const AuthForm = () => {
+export const SignIn = () => {
   return (
     <Card className="mx-auto w-full max-w-[380px] space-y-6">
       <CardHeader className="space-y-1 text-center">
-        <CardTitle className="text-2xl font-bold">Welcome</CardTitle>
+        <CardTitle className="text-2xl font-bold">Sign In</CardTitle>
         <CardDescription className="text-sm">
-          Sign in to your account
+          Sign in to your Wallfinity account
         </CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col gap-5">

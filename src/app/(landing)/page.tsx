@@ -32,7 +32,7 @@ export default function LandingPage() {
               </Link>
             </Button>
             <Button size="lg">
-              <Link href="/auth">Get Started</Link>
+              <Link href="/sign-in">Get Started</Link>
             </Button>
           </div>
         </div>

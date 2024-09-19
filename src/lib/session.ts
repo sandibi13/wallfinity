@@ -7,15 +7,3 @@ export async function getCurrentUser() {
 
   return session?.user;
 }
-
-export async function getUserById(userId: string) {
-  if (!userId) {
-    throw new Error("User ID is required");
-  }
-
-  const user = await db.user.findUnique({
-    where: { id: userId },
-  });
-
-  return user;
-}
