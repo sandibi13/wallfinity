@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 import { cn } from "~/lib/utils";
 import { ThemeProvider } from "~/components/theme-provider";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,6 +39,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Toaster position="top-center" />
           {children}
         </ThemeProvider>
       </body>
