@@ -1,6 +1,7 @@
 import React from "react";
 import { Header } from "~/components/header";
 import { Informationbar } from "~/components/informationbar";
+import { MobileNav } from "~/components/mobile-nav";
 import { Sidebar } from "~/components/sidebar";
 
 export default function MainLayout({
@@ -13,16 +14,16 @@ export default function MainLayout({
       <Header />
 
       <main className="mx-auto w-full max-w-7xl flex-1">
-        <div className="flex">
+        <div className="flex min-h-screen">
           <Sidebar />
 
-          <div className="container min-h-screen flex-1 border-x px-4 py-8">
-            {children}
-          </div>
+          <div className="container flex-1 border-x px-4 py-8">{children}</div>
 
           <Informationbar />
         </div>
       </main>
+
+      <MobileNav />
     </div>
   );
 }

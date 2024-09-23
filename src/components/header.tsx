@@ -10,7 +10,7 @@ export const Header = async () => {
 
   return (
     <header className="border-b p-4">
-      <div className="container flex items-center gap-2 p-0">
+      <div className="container flex max-w-7xl items-center gap-2 p-0">
         <Link
           className="flex items-center justify-center text-xl font-medium"
           href="/"

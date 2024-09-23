@@ -1,15 +1,15 @@
 import React from "react";
-import Link from "next/link";
 import { Button } from "./ui/button";
+import Link from "next/link";
 import { Bell, Home, Settings, Upload, User } from "lucide-react";
 import { getCurrentUser } from "~/lib/session";
 
-export const Sidebar = async () => {
+export const MobileNav = async () => {
   const user = await getCurrentUser();
 
   return (
-    <div className="hidden w-20 px-4 py-8 md:block lg:w-52">
-      <nav className="space-y-2">
+    <div className="sticky border-t md:hidden">
+      <nav className="flex flex-row p-3">
         <Button
           asChild
           variant="ghost"
