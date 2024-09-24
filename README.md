@@ -1,29 +1,37 @@
-# Create T3 App
+# Wallfinity
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+## Description
 
-## What's next? How do I make an app with this?
+Wallfinity is a platform where users can freely share and discover high-quality wallpapers. Whether you're looking to find the perfect background or share your own creations, Wallfinity makes it easy to upload, browse, and download wallpapers with no barriers. Built for simplicity and community, the app fosters a space for digital creators and wallpaper enthusiasts to connect and explore a vast collection of stunning visuals, all available for free installation.
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
-
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Tech Stack
 
 - [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
+- [Prisma ORM](https://www.prisma.io/)
+- [Auth.js](https://authjs.dev/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Stripe](https://stripe.com/)
 - [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- [Shadcn UI](https://ui.shadcn.com/)
 
-## Learn More
+## Get Started
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+1. Clone this repository to your local machine.
+2. Copy `.env.example` to `.env` and fill in the required environment variables.
+3. Run `pnpm install` to install dependencies.
+4. Run `pnpm db:push` to push your schema to the database.
+5. Execute `pnpm dev` to start the development server and enjoy!
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+## Roadmap
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+- [x] Landing page
+- [x] User authentication
+- [x] Set-up user profile
+- [ ] Account settings
+- [ ] Wallpaper upload
+- [ ] Donate page
+- [ ] Notifications page
 
-## How do I deploy this?
+## Contributing
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+To contribute, fork the repository and create a feature branch. If possible, open an issue for discussion before submitting a pull request. Your pull requests are warmly welcome.

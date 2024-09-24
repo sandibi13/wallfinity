@@ -9,13 +9,10 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { Button } from "~/components/ui/button";
 import { Label } from "~/components/ui/label";
-import { Input } from "~/components/ui/input";
-import { Textarea } from "~/components/ui/textarea";
-import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
-import { useTheme } from "next-themes";
+import { ThemeToggle } from "~/theme-toggle";
+import { AccountSettings } from "~/components/account-settings";
 
 export default async function SettingsPage() {
   const user = await getCurrentUser();
@@ -23,8 +20,6 @@ export default async function SettingsPage() {
   if (!user) {
     redirect("/sign-in");
   }
-
-  const { setTheme } = useTheme();
 
   return (
     <div>
@@ -35,36 +30,7 @@ export default async function SettingsPage() {
           <TabsTrigger value="preferences">Preferences</TabsTrigger>
         </TabsList>
         <TabsContent value="account">
-          <Card>
-            <CardHeader>
-              <CardTitle>Account Settings</CardTitle>
-              <CardDescription>Manage your account information</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="flex items-center space-x-4">
-                <Avatar className="h-20 w-20">
-                  <AvatarImage
-                    src="/placeholder.svg?height=80&width=80"
-                    alt="Profile picture"
-                  />
-                  <AvatarFallback>JD</AvatarFallback>
-                </Avatar>
-                <Button>Change Avatar</Button>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="username">Username</Label>
-                <Input id="username" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="bio">Bio</Label>
-                <Textarea id="bio" />
-              </div>
-            </CardContent>
-          </Card>
+          <AccountSettings />
         </TabsContent>
 
         <TabsContent value="preferences">
@@ -76,29 +42,12 @@ export default async function SettingsPage() {
             <CardContent className="space-y-4">
               <div className="space-y-2">
                 <Label>Theme</Label>
-                <RadioGroup onValueChange={setTheme}>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="light" id="light" />
-                    <Label htmlFor="light">Light</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="dark" id="dark" />
-                    <Label htmlFor="light">Dark</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="system" id="system" />
-                    <Label htmlFor="light">System</Label>
-                  </div>
-                </RadioGroup>
+                <ThemeToggle />
               </div>
             </CardContent>
           </Card>
         </TabsContent>
       </Tabs>
-
-      <div className="mt-6">
-        <Button>Save Settings</Button>
-      </div>
     </div>
   );
 }
